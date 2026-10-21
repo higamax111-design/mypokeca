@@ -1,0 +1,35 @@
+# 毎日1回（日本時間 午前4時）カードデータを取り込み、サイトのデータを更新する
+name: カードデータ取り込み
+on:
+  schedule:
+    - cron: '0 19 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: import-cards
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 検索テスト
+        run: node search.test.js
+      - name: 取り込みテスト（偽データ）
+        run: node import.test.mjs
+      - name: TCGdex から取り込み
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node import-tcgdex.mjs
+      - name: 変更があれば保存
+        run: |
+          git config user.name "card-import-bot"
+          git config user.email "card-import-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "変更なし"; else git commit -m "カードデータ更新 $(date -u +%Y-%m-%d)" && git push; fi

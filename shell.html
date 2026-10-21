@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3047B8">
+<title>マイポケカ（非公式）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>/*CSS*/</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">マイポケカ<small>非公式・カード探しと購入記録</small></div>
+  <div class="row"><button id="sync" class="sync" type="button" aria-label="保存状態（タップで設定）">📱 この端末のみ</button><button id="gear" class="iconbtn" aria-label="データと設定">⚙︎</button></div>
+</header>
+<main class="wrap">
+  <section id="v-home"></section>
+  <section id="v-wish" class="hide"></section>
+  <section id="v-search" class="hide"></section>
+  <section id="v-collection" class="hide"></section>
+  <section id="v-assets" class="hide"></section>
+  <section id="v-settings" class="hide"></section>
+</main>
+<nav class="tabs" aria-label="メインメニュー"><div class="in">
+  <button data-go="home"><span class="i" aria-hidden="true">⌂</span>ホーム</button>
+  <button data-go="wish"><span class="i" aria-hidden="true">♡</span>欲しい</button>
+  <button data-go="search"><span class="i" aria-hidden="true">⌕</span>検索</button>
+  <button data-go="collection"><span class="i" aria-hidden="true">▦</span>コレクション</button>
+  <button data-go="assets"><span class="i" aria-hidden="true">¥</span>資産</button>
+</div></nav>
+<div id="scrim" class="scrim"></div>
+<div id="sheet" class="sheet" role="dialog" aria-modal="true"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js"></script>
+<script>
+  // Supabase の接続先（公開可能なキーは公開しても安全なものです。秘密の鍵は絶対に書かないこと）
+  window.MPK_CONFIG = {
+    supabaseUrl: 'https://jrhkgrhulhuhgmlnnjsn.supabase.co',
+    supabaseKey: 'sb_publishable_uYYjTS08Tm5P3V6UR-h4Wg_KER8LTgL'
+  };
+</script>
+<script>/*SEARCH*/</script>
+<script>/*TEST*/</script>
+<script>/*APP*/</script>
+</body>
+</html>
