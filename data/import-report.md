@@ -1,9 +1,9 @@
 # カードデータ取り込み結果
 
-- 実行日時：2026-10-21T19:23:17.359Z
+- 実行日時：2026-10-22T19:23:34.931Z
 - セット：184件
-- カード：12781枚（詳細を新しく取得 12781・前回分を再利用 0）
-- レアリティ未取得：2779枚
+- カード：12781枚（詳細を新しく取得 8・前回分を再利用 12773）
+- レアリティ未取得：2775枚
 - データベース保存：スキップ（キー未設定）
 
 ## 略号に変換できなかったレアリティ表記
@@ -78,11 +78,3 @@
 - セット S2a（爆炎ウォーカー）にカードが0枚
 - セット S4（仰天のボルテッカー）にカードが0枚
 - セット S6a（イーブイヒーローズ）にカードが0枚
-- https://api.tcgdex.net/v2/ja/cards/SV11B-039 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV11B-038 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV11B-037 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV11B-040 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV4a-254 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV4a-255 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV4a-256 : HTTP 503
-- https://api.tcgdex.net/v2/ja/cards/SV4a-257 : HTTP 503
